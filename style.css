@@ -317,7 +317,7 @@ footer {
     height: auto; /* Elimină înălțimea fixă de 100vh */
     display: block; /* Elimină flexbox pentru a permite stivuirea sau poziționarea manuală */
     min-height: auto;
-    margin-top: 60px; /* Împinge secțiunea sub navbar-ul fix. Ajustează dacă e necesar. */
+    margin-top: 110px; /* Ajustat pentru a face loc header-ului mai înalt (contacte pe 2 linii) */
   }
 
   .video-background {
