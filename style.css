@@ -275,22 +275,22 @@ footer {
   }
 
   .video-background video {
-    position: relative; /* Nu mai este absolut */
+    position: relative;
     width: 100%;
     height: auto; /* Se redimensionează proporțional */
     object-fit: contain; /* Se asigură că tot videoclipul este vizibil */
   }
 
   .hero-content {
-    position: absolute; /* Rămâne peste video */
-    top: 50%;
+    position: absolute;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     /* Adăugăm un fundal semi-transparent textului pentru lizibilitate, 
        deoarece videoclipul va fi mic */
-    background: rgba(26, 43, 72, 0.7);
+    /* background: rgba(26, 43, 72, 0.7);
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 8px; */
   }
 }
