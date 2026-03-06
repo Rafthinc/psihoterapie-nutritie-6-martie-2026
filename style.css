@@ -22,6 +22,8 @@ body {
   background-color: var(--color-cream);
   color: var(--color-text);
   line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden; /* Previne scroll-ul orizontal cauzat de elemente mari */
 }
 
 .container {
@@ -93,12 +95,19 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden; /* Asigură tăierea oricărui conținut care depășește marginile */
 }
 
 .video-background video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Asigură că video-ul rămâne fixat în container și centrat */
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-position: center;
+  max-width: 100%; /* Forțează videoclipul să nu depășească lățimea ecranului */
 }
 
 .overlay {
@@ -250,5 +259,38 @@ footer {
 
   .container {
     width: 95%;
+  }
+
+  /* Ajustări pentru Video Responsive pe Mobil */
+  .hero-section {
+    height: auto; /* Elimină înălțimea fixă de 100vh */
+    display: block; /* Elimină flexbox pentru a permite stivuirea sau poziționarea manuală */
+    min-height: auto;
+  }
+
+  .video-background {
+    position: relative; /* Devine parte din fluxul documentului */
+    height: auto;
+    width: 100%;
+  }
+
+  .video-background video {
+    position: relative; /* Nu mai este absolut */
+    width: 100%;
+    height: auto; /* Se redimensionează proporțional */
+    object-fit: contain; /* Se asigură că tot videoclipul este vizibil */
+  }
+
+  .hero-content {
+    position: absolute; /* Rămâne peste video */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    /* Adăugăm un fundal semi-transparent textului pentru lizibilitate, 
+       deoarece videoclipul va fi mic */
+    background: rgba(26, 43, 72, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
   }
 }
