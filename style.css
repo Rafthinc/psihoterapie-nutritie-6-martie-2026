@@ -338,7 +338,7 @@ footer {
     flex-direction: column;
     min-height: auto;
     /* Folosim padding-top în loc de margin pentru a împinge conținutul sub meniul fix */
-    padding-top: 140px;
+    padding-top: 90px;
     margin-top: 0;
   }
 
