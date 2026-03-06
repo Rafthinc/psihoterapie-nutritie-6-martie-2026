@@ -43,8 +43,20 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="container">
-        <a href="#" class="logo">Psihoterapie & Nutriție</a>
-        <ul class="nav-links">
+        <div class="contact-header">
+          <a href="tel:0723179552" class="contact-link">📞 0723 179 552</a>
+          <a href="mailto:psihoterapiieficiente@gmail.com" class="contact-link"
+            >✉️ psihoterapiieficiente@gmail.com</a
+          >
+        </div>
+
+        <div class="hamburger" id="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
           <li><a href="#hero">Acasă</a></li>
           <li><a href="#about">Despre</a></li>
           <li><a href="#services">Servicii</a></li>
@@ -147,6 +159,14 @@
         setTimeout(() => {
           video.play();
         }, 15000); // 10000 milisecunde = 10 secunde
+      });
+
+      // Script pentru meniul de mobil
+      const hamburger = document.getElementById("hamburger-menu");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
       });
     </script>
   </body>
