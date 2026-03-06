@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adrian Francois Roșu - Apps4Mind | Psihoterapie & Nutriție</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts: Merriweather (Serif) & Open Sans (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">apps4mind</a>
+        <ul class="nav-links">
+          <li><a href="#hero">Acasă</a></li>
+          <li><a href="#about">Despre</a></li>
+          <li><a href="#services">Servicii</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section cu Video Background -->
+    <header id="hero" class="hero-section">
+      <div class="video-background">
+        <!-- TODO: Înlocuiește src cu fișierul video real -->
+        <video
+          id="hero-video"
+          autoplay
+          muted
+          playsinline
+          poster="assets/hero-poster.jpg"
+        >
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+          Browserul tău nu suportă tag-ul video.
+        </video>
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-content container">
+        <h1>Echilibru între Minte și Corp</h1>
+        <p class="subtitle">
+          Psihologie & Psihoterapie CBT • Nutriție Clinică • Tehnologie pentru
+          Sănătate
+        </p>
+        <p class="author">Roșu Adrian Francois</p>
+        <a href="#services" class="btn-primary"
+          >Descoperă Abordarea Integrată</a
+        >
+      </div>
+    </header>
+
+    <!-- Secțiune Servicii Integrate -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title">Servicii Integrate</h2>
+        <p class="section-desc">
+          O abordare holistică ce unește medicina, psihologia și tehnologia
+          pentru a trata cauzele profunde ale afecțiunilor.
+        </p>
+
+        <div class="services-grid">
+          <!-- Card 1: Psihoterapie -->
+          <div class="service-card">
+            <div class="icon">🧠</div>
+            <h3>Psihoterapie CBT</h3>
+            <p>
+              Terapie Cognitiv-Comportamentală specializată în anxietate,
+              depresie și tulburări alimentare. Recâștigă controlul asupra
+              gândurilor tale.
+            </p>
+          </div>
+
+          <!-- Card 2: Nutriție -->
+          <div class="service-card">
+            <div class="icon">🥗</div>
+            <h3>Nutriție Clinică</h3>
+            <p>
+              Expertiză UMFCD. Tratament pentru Sindromul Roemheld, balonare și
+              impactul digestiei asupra sănătății cardiace (extrasistole).
+            </p>
+          </div>
+
+          <!-- Card 3: Apps4Mind -->
+          <div class="service-card">
+            <div class="icon">📱</div>
+            <h3>Apps4Mind</h3>
+            <p>
+              Soluții digitale inovatoare dezvoltate in-house pentru
+              monitorizarea progresului și gestionarea sănătății mentale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Simplu -->
+    <footer>
+      <div class="container footer-content">
+        <div class="brand-info">
+          <p>&copy; 2024 Apps4Mind. Toate drepturile rezervate.</p>
+          <p class="credentials">
+            Adrian Francois Roșu - Master Nutriție UMFCD "Carol Davila"
+          </p>
+        </div>
+        <!-- Loc pentru logo UMFCD -->
+        <div class="partners">Partener/Alumni: UMFCD</div>
+      </div>
+    </footer>
+
+    <script>
+      const video = document.getElementById("hero-video");
+      video.addEventListener("ended", () => {
+        setTimeout(() => {
+          video.play();
+        }, 15000); // 10000 milisecunde = 10 secunde
+      });
+    </script>
+  </body>
+</html>
