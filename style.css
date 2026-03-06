@@ -23,6 +23,7 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   width: 100%;
+  max-width: 100vw; /* Asigură că body-ul nu depășește niciodată lățimea ferestrei */
   overflow-x: hidden; /* Previne scroll-ul orizontal cauzat de elemente mari */
 }
 
@@ -219,7 +220,10 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Redus de la 300px la 250px pentru a încăpea pe telefoane mici */
   gap: 2.5rem;
 }
 
@@ -276,7 +280,20 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1rem; /* Micșorăm subtitlul */
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Reducem titlurile secțiunilor de la 2.5rem */
+  }
+
+  .section-desc {
+    font-size: 1rem; /* Textul descriptiv mai mic */
+    padding: 0 0.5rem; /* Asigurăm că textul nu atinge marginile */
   }
 
   /* Meniu Mobil */
@@ -299,7 +316,9 @@ footer {
   }
 
   .contact-link {
-    font-size: 0.8rem; /* Micșorăm puțin fontul contactelor pe mobil */
+    font-size: 0.85rem;
+    word-break: break-all; /* Critic: Rupe adresa de email lungă pe două rânduri dacă nu încape */
+    line-height: 1.2;
   }
 
   /* Asigurăm că navbar-ul rămâne vizibil și fix */
@@ -315,34 +334,65 @@ footer {
   .hero-section {
     position: relative; /* Asigură ancorarea corectă pentru .hero-content */
     height: auto; /* Elimină înălțimea fixă de 100vh */
-    display: block; /* Elimină flexbox pentru a permite stivuirea sau poziționarea manuală */
+    display: flex;
+    flex-direction: column;
     min-height: auto;
-    margin-top: 110px; /* Ajustat pentru a face loc header-ului mai înalt (contacte pe 2 linii) */
+    /* Folosim padding-top în loc de margin pentru a împinge conținutul sub meniul fix */
+    padding-top: 140px;
+    margin-top: 0;
   }
 
   .video-background {
     position: relative; /* Devine parte din fluxul documentului */
     height: auto;
     width: 100%;
+    z-index: 1;
   }
 
   .video-background video {
     position: relative;
     width: 100%;
     height: auto; /* Se redimensionează proporțional */
-    object-fit: contain; /* Se asigură că tot videoclipul este vizibil */
+    object-fit: cover;
+    display: block;
   }
 
   .hero-content {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    /* Adăugăm un fundal semi-transparent textului pentru lizibilitate, 
-       deoarece videoclipul va fi mic */
-    /* background: rgba(26, 43, 72, 0.7);
-    padding: 1rem;
-    border-radius: 8px; */
+    /* Pe mobil, mutăm textul SUB video pentru a nu acoperi imaginea și a fi lizibil */
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 2rem 1rem;
+    color: var(--color-blue-dark); /* Text închis la culoare pe fundalul crem */
+  }
+
+  /* Ajustăm culorile textului pentru că acum este pe fundal crem, nu pe video */
+  .hero-content .author {
+    color: var(--color-sage-dark);
+  }
+
+  .hero-content h1 {
+    color: var(--color-blue-dark);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* Forțează afișarea pe o singură coloană, adaptabilă 100% */
+    gap: 1.5rem; /* Micșorează spațiul dintre carduri */
+  }
+
+  /* Optimizare Carduri Servicii pentru Mobil */
+  .service-card {
+    padding: 1rem; /* Reducem padding-ul la minim pentru a face cardul compact */
+  }
+
+  .service-card .icon {
+    font-size: 2.5rem; /* Iconițe mai mici */
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem; /* Titlurile cardurilor mai mici */
   }
 }
